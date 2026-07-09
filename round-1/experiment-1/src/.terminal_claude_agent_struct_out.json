@@ -1,0 +1,15 @@
+{
+  "title": "Citation Cartel Detection via Hodge Flow Decomposition",
+  "layman_summary": "This experiment tests whether a mathematical technique called Hodge decomposition can detect groups of academic journals that secretly boost each other's citation counts, outperforming two standard detection methods.",
+  "summary": "This experiment implements the Citation Vortex Score (CVS), a novel method for detecting citation cartels in academic journal networks using Hodge decomposition. The core idea is that citation cartels create cyclic (rotational) citation flows — journals citing each other in loops — which manifest as the 'curl' component in Hodge's decomposition of the edge-flow vector on the citation graph.\n\nMETHOD: CVS decomposes the observed citation flow f on a directed journal citation graph into gradient (f_grad = B1^T @ phi, solved via sparse least-squares) and residual (f_residual = f - f_grad) components. For each detected community S, CVS(S) = ||f_residual(S)||^2 / ||f(S)||^2 — the fraction of within-community flow that is 'curl-like' (non-gradient). High CVS indicates rotational, cartel-like citation behavior.\n\nBASELINES: (1) Reciprocity Ratio: mean(min(c_ij/c_ji, c_ji/c_ij)) across journal pairs in each community — measures how balanced mutual citations are. (2) CIDRE-lite: excess citations above a degree-corrected null model (E[c_ij] = out_i * in_j / total), normalized by total within-community citations.\n\nDATA: A 500-journal synthetic citation network with hierarchical community structure (25 communities of ~20 journals each), augmented with real OpenAlex journal citation data. Eight synthetic citation cartels (4 journals each) were injected with a 15x mutual citation boost as ground truth.\n\nRESULTS (23 communities, 8 cartel / 15 legitimate):\n- CVS: AUC-ROC=1.000, P@5=1.000, P@10=0.800, AP=1.000\n- Reciprocity Ratio: AUC-ROC=0.892, P@5=1.000, P@10=0.600, AP=0.865\n- CIDRE-lite: AUC-ROC=0.000 (anti-correlated), P@5=0.000, AP=0.220\n- Temporal stability: mean Spearman r=0.939 across 4 time windows\n\nDIAGNOSIS: CVS outperforms both baselines. Reciprocity Ratio captures some signal but is less discriminative. CIDRE-lite fails because the degree-corrected null model expects high mutual citations for high-degree (cartel) journals, normalizing away the cartel signal — this is a genuine limitation of degree-correction in the presence of citation manipulation.\n\nCONCLUSION: Hodge decomposition provides a principled geometric lens for cartel detection. The curl component uniquely captures the rotational structure of citation manipulation independently of node degree, making CVS robust where degree-corrected baselines fail.",
+  "out_expected_files": {
+    "script": "method.py",
+    "full_output": "full_method_out.json",
+    "mini_output": "mini_method_out.json",
+    "preview_output": "preview_method_out.json"
+  },
+  "upload_ignore_regexes": [
+    "(^|/)logs/",
+    "(^|/)\\.venv/"
+  ]
+}

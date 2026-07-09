@@ -1,0 +1,54 @@
+{
+  "metadata": {
+    "description": "Journal citation network for citation cartel detection (OpenAlex API, 2015-2022)",
+    "source": "OpenAlex REST API + Clarivate JCR Suppression Lists",
+    "task": "Classify journals as normal / self_citation / citation_stacking based on network features",
+    "graph_stats": {
+      "n_nodes": 96,
+      "n_edges": 888,
+      "sparsity": 0.09736842105263158,
+      "total_citation_count": 2644
+    },
+    "n_journals_queried": 100
+  },
+  "datasets": [
+    {
+      "dataset": "journal_citation_network",
+      "examples": [
+        {
+          "input": "{\"journal_name\": \"Blood\", \"issn_l\": \"0006-4971\", \"works_count\": 197688, \"global_cited_by_count\": 5625409, \"in_degree\": 3, \"out_degree\": 11, \"in_citation_weight\": 6, \"out_citation_weight\": 34, \"mutual_...",
+          "output": "normal",
+          "metadata_journal_id": "https://openalex.org/S200071133",
+          "metadata_journal_name": "Blood",
+          "metadata_issn_l": "0006-4971",
+          "metadata_row_index": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 3,
+          "metadata_class_names": "normal,self_citation,citation_stacking"
+        },
+        {
+          "input": "{\"journal_name\": \"Chemical Reviews\", \"issn_l\": \"0009-2665\", \"works_count\": 10631, \"global_cited_by_count\": 4092240, \"in_degree\": 15, \"out_degree\": 24, \"in_citation_weight\": 34, \"out_citation_weight\": ...",
+          "output": "normal",
+          "metadata_journal_id": "https://openalex.org/S41143188",
+          "metadata_journal_name": "Chemical Reviews",
+          "metadata_issn_l": "0009-2665",
+          "metadata_row_index": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 3,
+          "metadata_class_names": "normal,self_citation,citation_stacking"
+        },
+        {
+          "input": "{\"journal_name\": \"The Journal of Physiology\", \"issn_l\": \"0022-3751\", \"works_count\": 46290, \"global_cited_by_count\": 2685285, \"in_degree\": 2, \"out_degree\": 7, \"in_citation_weight\": 3, \"out_citation_wei...",
+          "output": "normal",
+          "metadata_journal_id": "https://openalex.org/S2090548",
+          "metadata_journal_name": "The Journal of Physiology",
+          "metadata_issn_l": "0022-3751",
+          "metadata_row_index": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 3,
+          "metadata_class_names": "normal,self_citation,citation_stacking"
+        }
+      ]
+    }
+  ]
+}

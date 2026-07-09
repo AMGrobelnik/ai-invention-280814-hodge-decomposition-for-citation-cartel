@@ -1,0 +1,285 @@
+{
+  "metadata": {
+    "method": "Delta-CVS (Citation Vortex Score via Hodge decomposition)",
+    "network": "96-journal OpenAlex, 2015-2022",
+    "n_nodes": 96,
+    "n_edges": 888,
+    "description": "Hodge decomposition decomposes directed citation flows into gradient (prestige hierarchy) and residual (circulation/curl) components. Delta-CVS measures the CHANGE in absolute residual energy after ca...",
+    "hodge_decomposition": {
+      "total_energy": 21280.0,
+      "gradient_energy": 4746.97,
+      "residual_energy": 16533.03,
+      "residual_fraction": 0.7769,
+      "max_reconstruction_error": 0.0
+    },
+    "louvain_seeds": 10,
+    "canonical_communities": 5,
+    "real_network_analysis": {
+      "note": "No known Clarivate cartel journals in the top-96 network. Structural analysis characterises the Hodge residual landscape.",
+      "community_table": [
+        {
+          "size": 6,
+          "cvs_score": 0.9212,
+          "reciprocity": 0.3958,
+          "cidre_lite": 0.6333,
+          "members": [
+            "Physical Review Letters",
+            "The Journal of Chemical Physics",
+            "The Astrophysical Journal"
+          ]
+        },
+        {
+          "size": 24,
+          "cvs_score": 0.8592,
+          "reciprocity": 0.2556,
+          "cidre_lite": 0.3406,
+          "members": [
+            "Science",
+            "Journal of the American Chemical Society",
+            "Choice Reviews Online"
+          ]
+        },
+        {
+          "size": 11,
+          "cvs_score": 0.8302,
+          "reciprocity": 0.3051,
+          "cidre_lite": 0.5,
+          "members": [
+            "Environmental Science & Technology",
+            "Analytical Chemistry",
+            "The Science of The Total Environment"
+          ]
+        }
+      ],
+      "top20_journals_by_absolute_residual": [
+        {
+          "journal_name": "Environmental Science & Technology",
+          "issn_l": "0013-936X",
+          "absolute_residual_energy": 3187.1,
+          "mutual_residual_energy": 3003.38,
+          "community_cvs": 0.8302,
+          "reciprocity": 0.1906,
+          "cidre_lite": 0.3708,
+          "gt_label": "normal"
+        },
+        {
+          "journal_name": "New England Journal of Medicine",
+          "issn_l": "0028-4793",
+          "absolute_residual_energy": 2501.9,
+          "mutual_residual_energy": 1946.8,
+          "community_cvs": 0.6442,
+          "reciprocity": 0.148,
+          "cidre_lite": 0.2697,
+          "gt_label": "normal"
+        },
+        {
+          "journal_name": "Journal of Hazardous Materials",
+          "issn_l": "0304-3894",
+          "absolute_residual_energy": 2237.59,
+          "mutual_residual_energy": 1937.33,
+          "community_cvs": 0.8302,
+          "reciprocity": 0.1804,
+          "cidre_lite": 0.3529,
+          "gt_label": "normal"
+        }
+      ],
+      "top20_mutual_pairs_by_residual_energy": [
+        {
+          "u_name": "Environmental Science & Technology",
+          "v_name": "Journal of Hazardous Materials",
+          "weight_uv": 1,
+          "weight_vu": 40,
+          "reciprocity": 0.025,
+          "mutual_residual_energy": 1101.4634
+        },
+        {
+          "u_name": "New England Journal of Medicine",
+          "v_name": "Circulation",
+          "weight_uv": 1,
+          "weight_vu": 39,
+          "reciprocity": 0.0256,
+          "mutual_residual_energy": 1024.9406
+        },
+        {
+          "u_name": "Environmental Science & Technology",
+          "v_name": "The Science of The Total Environment",
+          "weight_uv": 14,
+          "weight_vu": 27,
+          "reciprocity": 0.5185,
+          "mutual_residual_energy": 865.2416
+        }
+      ],
+      "stability_top20_by_absolute_residual": [
+        {
+          "journal_name": "Environmental Science & Technology",
+          "mean_community_cvs": 0.8302,
+          "std_community_cvs": 0.0,
+          "absolute_residual_energy": 3187.1,
+          "mutual_residual_energy": 3003.38,
+          "reciprocity": 0.1906
+        },
+        {
+          "journal_name": "New England Journal of Medicine",
+          "mean_community_cvs": 0.6373,
+          "std_community_cvs": 0.0045,
+          "absolute_residual_energy": 2501.9,
+          "mutual_residual_energy": 1946.8,
+          "reciprocity": 0.148
+        },
+        {
+          "journal_name": "Journal of Hazardous Materials",
+          "mean_community_cvs": 0.8302,
+          "std_community_cvs": 0.0,
+          "absolute_residual_energy": 2237.59,
+          "mutual_residual_energy": 1937.33,
+          "reciprocity": 0.1804
+        }
+      ]
+    },
+    "synthetic_validation": {
+      "description": "20 random 8-journal subsets per boost level, chosen within reference Louvain communities. Score = delta-absolute-residual-energy (change after injection). AUC: ability to rank injected nodes above non...",
+      "auc_vs_boost": [
+        {
+          "boost_level": 2.0,
+          "n_subsets": 20,
+          "delta_cvs": {
+            "mean": 0.921,
+            "std": 0.0536,
+            "min": 0.8253,
+            "max": 1.0,
+            "n": 20
+          },
+          "delta_reciprocity": {
+            "mean": 0.49,
+            "std": 0.0238,
+            "min": 0.4332,
+            "max": 0.5,
+            "n": 20
+          },
+          "delta_cidre_lite": {
+            "mean": 0.5,
+            "std": 0.0,
+            "min": 0.5,
+            "max": 0.5,
+            "n": 20
+          }
+        },
+        {
+          "boost_level": 5.0,
+          "n_subsets": 20,
+          "delta_cvs": {
+            "mean": 0.9251,
+            "std": 0.0671,
+            "min": 0.7827,
+            "max": 1.0,
+            "n": 20
+          },
+          "delta_reciprocity": {
+            "mean": 0.5067,
+            "std": 0.036,
+            "min": 0.4332,
+            "max": 0.5675,
+            "n": 20
+          },
+          "delta_cidre_lite": {
+            "mean": 0.5,
+            "std": 0.0,
+            "min": 0.5,
+            "max": 0.5,
+            "n": 20
+          }
+        },
+        {
+          "boost_level": 10.0,
+          "n_subsets": 20,
+          "delta_cvs": {
+            "mean": 0.9541,
+            "std": 0.0493,
+            "min": 0.8352,
+            "max": 1.0,
+            "n": 20
+          },
+          "delta_reciprocity": {
+            "mean": 0.4932,
+            "std": 0.029,
+            "min": 0.4332,
+            "max": 0.5661,
+            "n": 20
+          },
+          "delta_cidre_lite": {
+            "mean": 0.5,
+            "std": 0.0,
+            "min": 0.5,
+            "max": 0.5,
+            "n": 20
+          }
+        }
+      ],
+      "interpretation": "Delta-CVS AUC should monotonically increase with boost level: higher citation inflation produces larger absolute residual changes on injected nodes. All-methods AUC > 0.5 confirms sensitivity; CVS > b..."
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "journal_citation_network",
+      "examples": [
+        {
+          "input": "{\"journal_name\": \"Blood\", \"issn_l\": \"0006-4971\", \"works_count\": 197688, \"global_cited_by_count\": 5625409, \"in_degree\": 3, \"out_degree\": 11, \"in_citation_weight\": 6, \"out_citation_weight\": 34, \"mutual_...",
+          "output": "normal",
+          "predict_cvs": "normal",
+          "predict_reciprocity": "normal",
+          "predict_cidre_lite": "citation_stacking",
+          "metadata_journal_id": "https://openalex.org/S200071133",
+          "metadata_journal_name": "Blood",
+          "metadata_issn_l": "0006-4971",
+          "metadata_row_index": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 3,
+          "metadata_class_names": "normal,self_citation,citation_stacking",
+          "metadata_absolute_residual_energy": 124.7798,
+          "metadata_mutual_residual_energy": 37.7268,
+          "metadata_community_cvs": 0.6442,
+          "metadata_reciprocity_score": 0.2229,
+          "metadata_cidre_lite_score": 0.5769
+        },
+        {
+          "input": "{\"journal_name\": \"Chemical Reviews\", \"issn_l\": \"0009-2665\", \"works_count\": 10631, \"global_cited_by_count\": 4092240, \"in_degree\": 15, \"out_degree\": 24, \"in_citation_weight\": 34, \"out_citation_weight\": ...",
+          "output": "normal",
+          "predict_cvs": "citation_stacking",
+          "predict_reciprocity": "normal",
+          "predict_cidre_lite": "normal",
+          "metadata_journal_id": "https://openalex.org/S41143188",
+          "metadata_journal_name": "Chemical Reviews",
+          "metadata_issn_l": "0009-2665",
+          "metadata_row_index": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 3,
+          "metadata_class_names": "normal,self_citation,citation_stacking",
+          "metadata_absolute_residual_energy": 636.5344,
+          "metadata_mutual_residual_energy": 473.0515,
+          "metadata_community_cvs": 0.8592,
+          "metadata_reciprocity_score": 0.2125,
+          "metadata_cidre_lite_score": 0.2782
+        },
+        {
+          "input": "{\"journal_name\": \"The Journal of Physiology\", \"issn_l\": \"0022-3751\", \"works_count\": 46290, \"global_cited_by_count\": 2685285, \"in_degree\": 2, \"out_degree\": 7, \"in_citation_weight\": 3, \"out_citation_wei...",
+          "output": "normal",
+          "predict_cvs": "normal",
+          "predict_reciprocity": "normal",
+          "predict_cidre_lite": "normal",
+          "metadata_journal_id": "https://openalex.org/S2090548",
+          "metadata_journal_name": "The Journal of Physiology",
+          "metadata_issn_l": "0022-3751",
+          "metadata_row_index": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 3,
+          "metadata_class_names": "normal,self_citation,citation_stacking",
+          "metadata_absolute_residual_energy": 16.2993,
+          "metadata_mutual_residual_energy": 0.0,
+          "metadata_community_cvs": 0.7252,
+          "metadata_reciprocity_score": 0.1439,
+          "metadata_cidre_lite_score": 0.4222
+        }
+      ]
+    }
+  ]
+}

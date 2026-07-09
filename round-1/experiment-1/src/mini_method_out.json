@@ -1,0 +1,178 @@
+{
+  "metadata": {
+    "method_name": "Citation Vortex Score (CVS) via Hodge Decomposition",
+    "description": "CVS decomposes the citation flow graph using Hodge theory. The curl component of the Hodge decomposition captures rotational/cyclic citation patterns indicative of citation cartels. CVS(S) = ||f_curl(S)||^2 / ||f(S)||^2 for community S.",
+    "baselines": [
+      "Reciprocity Ratio",
+      "CIDRE-lite"
+    ],
+    "evaluation_metrics": {
+      "cvs": {
+        "precision@5": 1.0,
+        "recall@5": 0.625,
+        "precision@10": 0.8,
+        "recall@10": 1.0,
+        "precision@20": 0.4,
+        "recall@20": 1.0,
+        "auc_roc": 1.0,
+        "avg_precision": 1.0,
+        "top_decile_precision": 1.0,
+        "top_decile_recall": 0.25
+      },
+      "reciprocity": {
+        "precision@5": 1.0,
+        "recall@5": 0.625,
+        "precision@10": 0.6,
+        "recall@10": 0.75,
+        "precision@20": 0.4,
+        "recall@20": 1.0,
+        "auc_roc": 0.8916666666666666,
+        "avg_precision": 0.8649621212121212,
+        "top_decile_precision": 1.0,
+        "top_decile_recall": 0.25
+      },
+      "cidre_lite": {
+        "precision@5": 0.0,
+        "recall@5": 0.0,
+        "precision@10": 0.0,
+        "recall@10": 0.0,
+        "precision@20": 0.25,
+        "recall@20": 0.625,
+        "auc_roc": 0.0,
+        "avg_precision": 0.2198827790165369,
+        "top_decile_precision": 0.0,
+        "top_decile_recall": 0.0
+      }
+    },
+    "n_communities": 23,
+    "n_cartel_communities": 8,
+    "dataset": "openalex_journal_citations_2018_2022_with_synthetic_cartels",
+    "temporal_stability": {
+      "windows": [
+        "2015-2017",
+        "2017-2019",
+        "2019-2021",
+        "2020-2022"
+      ],
+      "spearman_correlations": [
+        0.9189723320158102,
+        0.9367588932806324,
+        0.9041501976284586,
+        0.9723320158102767,
+        0.9377470355731227,
+        0.9614624505928853
+      ],
+      "mean_correlation": 0.9385704874835309
+    },
+    "diagnosis": "CONFIRM: CVS outperforms baselines — Hodge curl captures cartel signal"
+  },
+  "datasets": [
+    {
+      "dataset": "openalex_journal_citations_2018_2022_with_synthetic_cartels",
+      "examples": [
+        {
+          "input": "Community 0: 20 journals. Journals: Journal J0000, Journal J0025, Journal J0050, Journal J0075, Journal J0100, Journal J0125, Journal J0150, Journal J0175.... Is this a citation cartel?",
+          "output": "legitimate",
+          "predict_cvs": "0.603866",
+          "predict_reciprocity": "0.043111",
+          "predict_cidre_lite": "0.991010",
+          "metadata_community_id": 0,
+          "metadata_community_size": 20,
+          "metadata_label": 0,
+          "metadata_journal_ids": [
+            "J0250",
+            "J0000",
+            "J0375",
+            "J0200",
+            "J0450",
+            "J0425",
+            "J0350",
+            "J0275",
+            "J0475",
+            "J0175"
+          ],
+          "metadata_journal_names": [
+            "Journal J0000",
+            "Journal J0025",
+            "Journal J0050",
+            "Journal J0075",
+            "Journal J0100",
+            "Journal J0125",
+            "Journal J0150",
+            "Journal J0175",
+            "Journal J0200",
+            "Journal J0225"
+          ]
+        },
+        {
+          "input": "Community 1: 18 journals. Journals: Journal J0001, Journal J0026, Journal J0051, Journal J0076, Journal J0101, Journal J0126, Journal J0151, Journal J0176.... Is this a citation cartel?",
+          "output": "legitimate",
+          "predict_cvs": "0.846859",
+          "predict_reciprocity": "0.136850",
+          "predict_cidre_lite": "0.988347",
+          "metadata_community_id": 1,
+          "metadata_community_size": 18,
+          "metadata_label": 0,
+          "metadata_journal_ids": [
+            "J0251",
+            "J0301",
+            "J0101",
+            "J0051",
+            "J0376",
+            "J0476",
+            "J0451",
+            "J0201",
+            "J0126",
+            "J0351"
+          ],
+          "metadata_journal_names": [
+            "Journal J0001",
+            "Journal J0026",
+            "Journal J0051",
+            "Journal J0076",
+            "Journal J0101",
+            "Journal J0126",
+            "Journal J0151",
+            "Journal J0176",
+            "Journal J0201",
+            "Journal J0226"
+          ]
+        },
+        {
+          "input": "Community 2: 38 journals. Journals: Journal J0002, Journal J0013, Journal J0027, Journal J0052, Journal J0063, Journal J0077, Journal J0088, Journal J0102.... Is this a citation cartel?",
+          "output": "cartel",
+          "predict_cvs": "0.944123",
+          "predict_reciprocity": "0.087748",
+          "predict_cidre_lite": "0.974760",
+          "metadata_community_id": 2,
+          "metadata_community_size": 38,
+          "metadata_label": 1,
+          "metadata_journal_ids": [
+            "J0477",
+            "J0277",
+            "J0302",
+            "J0238",
+            "J0138",
+            "J0002",
+            "J0288",
+            "J0063",
+            "J0488",
+            "J0088"
+          ],
+          "metadata_journal_names": [
+            "Journal J0002",
+            "Journal J0013",
+            "Journal J0027",
+            "Journal J0052",
+            "Journal J0063",
+            "Journal J0077",
+            "Journal J0088",
+            "Journal J0102",
+            "Journal J0113",
+            "Journal J0127"
+          ]
+        }
+      ]
+    }
+  ]
+}
