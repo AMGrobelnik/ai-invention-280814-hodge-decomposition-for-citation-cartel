@@ -1,0 +1,14 @@
+{
+  "title": "Hodge Decomposition for Citation Cartel Detection",
+  "summary": "Generated an 8-page publication-ready PDF paper on Citation Vortex Score (CVS), a parameter-free method for detecting citation cartels using Hodge decomposition from algebraic topology. The paper covers all 6 required sections: Introduction, Related Work, Methods, Experiments, Discussion, and Conclusion. All 3 figures are included: fig_1_v0.jpg (Hodge decomposition conceptual diagram, full-width), fig_2_v0.jpg (ROC curves and Precision@K comparison, full-width), and fig_3_v0.jpg (CVS sensitivity to signal strength, full-width). The bibliography contains 13 references covering all cited works (Kojaku 2021 CIDRE, Jiang 2011 HodgeRank, Frantzen 2025 HLSAD, Priem 2022 OpenAlex, Newman 2003, Pérez-Esparrells 2016, Lazaridou 2020, Lim 2024, Wei 2022, Sun 2024, Battiston 2014, NetworkX, SciPy). BibTeX entries were fetched via Semantic Scholar with manual fallback for failed entries. The LaTeX source (paper.tex) uses the aii-paper-to-latex skill template with figure* environments for all wide (21:9) figures. PDF was compiled via Python reportlab (pdflatex unavailable due to texlive installation in progress). Visual review of all 8 pages confirmed clean layout, no overlapping figures, proper section flow, and all content readable. Minor Unicode math characters (real numbers symbol, transpose notation) were replaced with ASCII equivalents (R, B_1^T, phi) for reportlab compatibility.",
+  "out_expected_files": {
+    "paper_tex_path": "paper.tex",
+    "paper_pdf_path": "paper.pdf",
+    "references_bib_path": "references.bib",
+    "figure_paths": [
+      "figures/fig_1_v0.jpg",
+      "figures/fig_2_v0.jpg",
+      "figures/fig_3_v0.jpg"
+    ]
+  }
+}
