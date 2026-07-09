@@ -1,0 +1,847 @@
+{
+  "metadata": {
+    "evaluation_name": "CVS Cartel Detection: Statistical Validation",
+    "method": "Citation Vortex Score (CVS) via Hodge Decomposition",
+    "baselines": [
+      "Reciprocity Ratio",
+      "CIDRE-lite"
+    ],
+    "n_communities": 23,
+    "n_cartel_communities": 8,
+    "dataset": "openalex_journal_citations_2018_2022_with_synthetic_cartels",
+    "hypothesis_confirmed": true,
+    "boost_sensitivity": [
+      {
+        "boost": 2.0,
+        "cvs_auc": 0.5595238095238095,
+        "reciprocity_auc": 0.7619047619047619,
+        "cidre_auc": 0.22619047619047622,
+        "cvs_p5": 0.4,
+        "cvs_p10": 0.2
+      },
+      {
+        "boost": 5.0,
+        "cvs_auc": 0.6904761904761905,
+        "reciprocity_auc": 0.7976190476190477,
+        "cidre_auc": 0.14285714285714285,
+        "cvs_p5": 0.4,
+        "cvs_p10": 0.2
+      },
+      {
+        "boost": 10.0,
+        "cvs_auc": 0.9404761904761905,
+        "reciprocity_auc": 0.7976190476190477,
+        "cidre_auc": 0.10714285714285715,
+        "cvs_p5": 0.6,
+        "cvs_p10": 0.4
+      },
+      {
+        "boost": 15.0,
+        "cvs_auc": 0.988095238095238,
+        "reciprocity_auc": 0.7857142857142857,
+        "cidre_auc": 0.10714285714285715,
+        "cvs_p5": 0.8,
+        "cvs_p10": 0.4
+      }
+    ],
+    "robustness_analysis": {
+      "louvain_aucs": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "leiden_aucs": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "infomap_aucs": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kruskal_wallis_h": 0.0,
+      "kruskal_wallis_p": 1.0
+    },
+    "threshold_analysis": [
+      {
+        "threshold": 0.589584,
+        "recall": 1.0,
+        "precision": 0.34782608695652173,
+        "tp": 8,
+        "fp": 15,
+        "fn": 0
+      },
+      {
+        "threshold": 0.6102434736842105,
+        "recall": 1.0,
+        "precision": 0.38095238095238093,
+        "tp": 8,
+        "fp": 13,
+        "fn": 0
+      },
+      {
+        "threshold": 0.630902947368421,
+        "recall": 1.0,
+        "precision": 0.38095238095238093,
+        "tp": 8,
+        "fp": 13,
+        "fn": 0
+      },
+      {
+        "threshold": 0.6515624210526316,
+        "recall": 1.0,
+        "precision": 0.42105263157894735,
+        "tp": 8,
+        "fp": 11,
+        "fn": 0
+      },
+      {
+        "threshold": 0.6722218947368421,
+        "recall": 1.0,
+        "precision": 0.42105263157894735,
+        "tp": 8,
+        "fp": 11,
+        "fn": 0
+      },
+      {
+        "threshold": 0.6928813684210526,
+        "recall": 1.0,
+        "precision": 0.42105263157894735,
+        "tp": 8,
+        "fp": 11,
+        "fn": 0
+      },
+      {
+        "threshold": 0.7135408421052631,
+        "recall": 1.0,
+        "precision": 0.4444444444444444,
+        "tp": 8,
+        "fp": 10,
+        "fn": 0
+      },
+      {
+        "threshold": 0.7342003157894736,
+        "recall": 1.0,
+        "precision": 0.47058823529411764,
+        "tp": 8,
+        "fp": 9,
+        "fn": 0
+      },
+      {
+        "threshold": 0.7548597894736843,
+        "recall": 1.0,
+        "precision": 0.5333333333333333,
+        "tp": 8,
+        "fp": 7,
+        "fn": 0
+      },
+      {
+        "threshold": 0.7755192631578948,
+        "recall": 1.0,
+        "precision": 0.5714285714285714,
+        "tp": 8,
+        "fp": 6,
+        "fn": 0
+      },
+      {
+        "threshold": 0.7961787368421053,
+        "recall": 1.0,
+        "precision": 0.7272727272727273,
+        "tp": 8,
+        "fp": 3,
+        "fn": 0
+      },
+      {
+        "threshold": 0.8168382105263159,
+        "recall": 1.0,
+        "precision": 0.7272727272727273,
+        "tp": 8,
+        "fp": 3,
+        "fn": 0
+      },
+      {
+        "threshold": 0.8374976842105264,
+        "recall": 1.0,
+        "precision": 0.8,
+        "tp": 8,
+        "fp": 2,
+        "fn": 0
+      },
+      {
+        "threshold": 0.8581571578947369,
+        "recall": 1.0,
+        "precision": 1.0,
+        "tp": 8,
+        "fp": 0,
+        "fn": 0
+      },
+      {
+        "threshold": 0.8788166315789474,
+        "recall": 1.0,
+        "precision": 1.0,
+        "tp": 8,
+        "fp": 0,
+        "fn": 0
+      },
+      {
+        "threshold": 0.8994761052631579,
+        "recall": 1.0,
+        "precision": 1.0,
+        "tp": 8,
+        "fp": 0,
+        "fn": 0
+      },
+      {
+        "threshold": 0.9201355789473684,
+        "recall": 1.0,
+        "precision": 1.0,
+        "tp": 8,
+        "fp": 0,
+        "fn": 0
+      },
+      {
+        "threshold": 0.9407950526315789,
+        "recall": 1.0,
+        "precision": 1.0,
+        "tp": 8,
+        "fp": 0,
+        "fn": 0
+      },
+      {
+        "threshold": 0.9614545263157895,
+        "recall": 0.5,
+        "precision": 1.0,
+        "tp": 4,
+        "fp": 0,
+        "fn": 4
+      },
+      {
+        "threshold": 0.982114,
+        "recall": 0.125,
+        "precision": 1.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 7
+      }
+    ],
+    "recall_by_rank_bin": {
+      "bin_0_to_10pct": {
+        "recall": 0.25,
+        "precision": 1.0
+      },
+      "bin_10_to_20pct": {
+        "recall": 0.25,
+        "precision": 1.0
+      },
+      "bin_20_to_30pct": {
+        "recall": 0.25,
+        "precision": 1.0
+      },
+      "bin_30_to_50pct": {
+        "recall": 0.25,
+        "precision": 0.4
+      },
+      "bin_50_to_100pct": {
+        "recall": 0.0,
+        "precision": 0.0
+      }
+    },
+    "false_positives_top20": [
+      {
+        "community_id": 1,
+        "community_size": 18,
+        "cvs_score": 0.846859,
+        "reciprocity_score": 0.13685,
+        "cidre_score": 0.988347,
+        "label": 0
+      },
+      {
+        "community_id": 21,
+        "community_size": 20,
+        "cvs_score": 0.842778,
+        "reciprocity_score": 0.130223,
+        "cidre_score": 0.987216,
+        "label": 0
+      },
+      {
+        "community_id": 16,
+        "community_size": 19,
+        "cvs_score": 0.825965,
+        "reciprocity_score": 0.066027,
+        "cidre_score": 0.987845,
+        "label": 0
+      },
+      {
+        "community_id": 5,
+        "community_size": 20,
+        "cvs_score": 0.793479,
+        "reciprocity_score": 0.112965,
+        "cidre_score": 0.987087,
+        "label": 0
+      },
+      {
+        "community_id": 10,
+        "community_size": 19,
+        "cvs_score": 0.781173,
+        "reciprocity_score": 0.081527,
+        "cidre_score": 0.987501,
+        "label": 0
+      },
+      {
+        "community_id": 11,
+        "community_size": 20,
+        "cvs_score": 0.776206,
+        "reciprocity_score": 0.096127,
+        "cidre_score": 0.989676,
+        "label": 0
+      },
+      {
+        "community_id": 18,
+        "community_size": 20,
+        "cvs_score": 0.755677,
+        "reciprocity_score": 0.064514,
+        "cidre_score": 0.987503,
+        "label": 0
+      },
+      {
+        "community_id": 12,
+        "community_size": 19,
+        "cvs_score": 0.745638,
+        "reciprocity_score": 0.095723,
+        "cidre_score": 0.992156,
+        "label": 0
+      },
+      {
+        "community_id": 15,
+        "community_size": 18,
+        "cvs_score": 0.735722,
+        "reciprocity_score": 0.063303,
+        "cidre_score": 0.988157,
+        "label": 0
+      },
+      {
+        "community_id": 13,
+        "community_size": 39,
+        "cvs_score": 0.720822,
+        "reciprocity_score": 0.101954,
+        "cidre_score": 0.987455,
+        "label": 0
+      },
+      {
+        "community_id": 9,
+        "community_size": 20,
+        "cvs_score": 0.695633,
+        "reciprocity_score": 0.091571,
+        "cidre_score": 0.987506,
+        "label": 0
+      },
+      {
+        "community_id": 3,
+        "community_size": 19,
+        "cvs_score": 0.640899,
+        "reciprocity_score": 0.056808,
+        "cidre_score": 0.988109,
+        "label": 0
+      }
+    ],
+    "true_positives_top20": [
+      {
+        "community_id": 17,
+        "community_size": 21,
+        "cvs_score": 0.982114,
+        "reciprocity_score": 0.195661,
+        "cidre_score": 0.969481,
+        "label": 1
+      },
+      {
+        "community_id": 7,
+        "community_size": 20,
+        "cvs_score": 0.982028,
+        "reciprocity_score": 0.178242,
+        "cidre_score": 0.975877,
+        "label": 1
+      },
+      {
+        "community_id": 20,
+        "community_size": 23,
+        "cvs_score": 0.974422,
+        "reciprocity_score": 0.096173,
+        "cidre_score": 0.976655,
+        "label": 1
+      },
+      {
+        "community_id": 4,
+        "community_size": 23,
+        "cvs_score": 0.962941,
+        "reciprocity_score": 0.174507,
+        "cidre_score": 0.974474,
+        "label": 1
+      },
+      {
+        "community_id": 6,
+        "community_size": 23,
+        "cvs_score": 0.958581,
+        "reciprocity_score": 0.148856,
+        "cidre_score": 0.975853,
+        "label": 1
+      },
+      {
+        "community_id": 22,
+        "community_size": 20,
+        "cvs_score": 0.956212,
+        "reciprocity_score": 0.143377,
+        "cidre_score": 0.971734,
+        "label": 1
+      },
+      {
+        "community_id": 19,
+        "community_size": 22,
+        "cvs_score": 0.954027,
+        "reciprocity_score": 0.124156,
+        "cidre_score": 0.970967,
+        "label": 1
+      },
+      {
+        "community_id": 2,
+        "community_size": 38,
+        "cvs_score": 0.944123,
+        "reciprocity_score": 0.087748,
+        "cidre_score": 0.97476,
+        "label": 1
+      }
+    ],
+    "temporal_stability": {
+      "windows": [
+        "2015-2017",
+        "2017-2019",
+        "2019-2021",
+        "2020-2022"
+      ],
+      "spearman_correlations": [
+        0.9189723320158102,
+        0.9367588932806324,
+        0.9041501976284586,
+        0.9723320158102767,
+        0.9377470355731227,
+        0.9614624505928853
+      ],
+      "mean_spearman": 0.9385704874835309,
+      "ci_lo": 0.919626976284585,
+      "ci_hi": 0.9570158102766798
+    },
+    "delong_test": {
+      "cvs_vs_reciprocity": 0.1299890191769455,
+      "cvs_vs_cidre_lite": 1.0,
+      "reciprocity_vs_cidre_lite": 0.0
+    },
+    "detailed_metrics": {
+      "cvs": {
+        "precision_at_5": 1.0,
+        "recall_at_5": 0.625,
+        "precision_at_5_ci_lo": 0.5655085052479191,
+        "precision_at_5_ci_hi": 1.0,
+        "precision_at_10": 0.8,
+        "recall_at_10": 1.0,
+        "precision_at_10_ci_lo": 0.49015684672072335,
+        "precision_at_10_ci_hi": 0.9433190520193067,
+        "precision_at_20": 0.4,
+        "recall_at_20": 1.0,
+        "precision_at_20_ci_lo": 0.21880396741419272,
+        "precision_at_20_ci_hi": 0.613422057684794,
+        "recall_at_top_decile": 0.25,
+        "auc_roc": 1.0,
+        "auc_roc_ci_lo": 1.0,
+        "auc_roc_ci_hi": 1.0,
+        "avg_precision": 1.0
+      },
+      "reciprocity": {
+        "precision_at_5": 1.0,
+        "recall_at_5": 0.625,
+        "precision_at_5_ci_lo": 0.5655085052479191,
+        "precision_at_5_ci_hi": 1.0,
+        "precision_at_10": 0.6,
+        "recall_at_10": 0.75,
+        "precision_at_10_ci_lo": 0.3126695474501864,
+        "precision_at_10_ci_hi": 0.8318224187964902,
+        "precision_at_20": 0.4,
+        "recall_at_20": 1.0,
+        "precision_at_20_ci_lo": 0.21880396741419272,
+        "precision_at_20_ci_hi": 0.613422057684794,
+        "recall_at_top_decile": 0.25,
+        "auc_roc": 0.8916666666666666,
+        "auc_roc_ci_lo": 0.7514361042712182,
+        "auc_roc_ci_hi": 1.0,
+        "avg_precision": 0.8649621212121212
+      },
+      "cidre_lite": {
+        "precision_at_5": 0.0,
+        "recall_at_5": 0.0,
+        "precision_at_5_ci_lo": 0.0,
+        "precision_at_5_ci_hi": 0.43449149475208104,
+        "precision_at_10": 0.0,
+        "recall_at_10": 0.0,
+        "precision_at_10_ci_lo": 0.0,
+        "precision_at_10_ci_hi": 0.2775401687666166,
+        "precision_at_20": 0.25,
+        "recall_at_20": 0.625,
+        "precision_at_20_ci_lo": 0.11186005278940309,
+        "precision_at_20_ci_hi": 0.4687050099580636,
+        "recall_at_top_decile": 0.0,
+        "auc_roc": 0.0,
+        "auc_roc_ci_lo": 0.0,
+        "auc_roc_ci_hi": 0.0,
+        "avg_precision": 0.2198827790165369
+      }
+    }
+  },
+  "metrics_agg": {
+    "cvs_precision_at_5": 1.0,
+    "cvs_precision_at_10": 0.8,
+    "cvs_precision_at_20": 0.4,
+    "cvs_recall_at_5": 0.625,
+    "cvs_recall_at_10": 1.0,
+    "cvs_recall_at_20": 1.0,
+    "cvs_recall_at_top_decile": 0.25,
+    "cvs_auc_roc": 1.0,
+    "cvs_auc_roc_ci_lo": 1.0,
+    "cvs_auc_roc_ci_hi": 1.0,
+    "cvs_avg_precision": 1.0,
+    "cvs_precision_at_5_ci_lo": 0.5655085052479191,
+    "cvs_precision_at_5_ci_hi": 1.0,
+    "cvs_precision_at_10_ci_lo": 0.49015684672072335,
+    "cvs_precision_at_10_ci_hi": 0.9433190520193067,
+    "cvs_precision_at_20_ci_lo": 0.21880396741419272,
+    "cvs_precision_at_20_ci_hi": 0.613422057684794,
+    "reciprocity_precision_at_5": 1.0,
+    "reciprocity_precision_at_10": 0.6,
+    "reciprocity_precision_at_20": 0.4,
+    "reciprocity_recall_at_top_decile": 0.25,
+    "reciprocity_auc_roc": 0.8916666666666666,
+    "reciprocity_auc_roc_ci_lo": 0.7514361042712182,
+    "reciprocity_auc_roc_ci_hi": 1.0,
+    "cidre_lite_precision_at_5": 0.0,
+    "cidre_lite_precision_at_10": 0.0,
+    "cidre_lite_precision_at_20": 0.25,
+    "cidre_lite_auc_roc": 0.0,
+    "cidre_lite_auc_roc_ci_lo": 0.0,
+    "cidre_lite_auc_roc_ci_hi": 0.0,
+    "delong_p_cvs_vs_reciprocity": 0.1299890191769455,
+    "delong_p_cvs_vs_cidre_lite": 1.0,
+    "delong_p_reciprocity_vs_cidre_lite": 0.0,
+    "fisher_p20_cvs_vs_reciprocity": 1.0,
+    "fisher_p20_cvs_vs_cidre_lite": 0.5006034160650402,
+    "cohen_h_p20_cvs_vs_reciprocity": 0.0,
+    "cohen_h_p20_cvs_vs_cidre_lite": 0.32224085480796805,
+    "temporal_stability_mean_spearman": 0.9385704874835309,
+    "temporal_stability_spearman_ci_lo": 0.919626976284585,
+    "temporal_stability_spearman_ci_hi": 0.9570158102766798,
+    "temporal_stability_n_windows": 6.0,
+    "boost_2x_cvs_auc": 0.5595238095238095,
+    "boost_5x_cvs_auc": 0.6904761904761905,
+    "boost_10x_cvs_auc": 0.9404761904761905,
+    "boost_15x_cvs_auc": 0.988095238095238,
+    "boost_2x_reciprocity_auc": 0.7619047619047619,
+    "boost_5x_reciprocity_auc": 0.7976190476190477,
+    "boost_10x_reciprocity_auc": 0.7976190476190477,
+    "boost_15x_reciprocity_auc": 0.7857142857142857,
+    "robustness_kruskal_wallis_h": 0.0,
+    "robustness_kruskal_wallis_p": 1.0,
+    "robustness_cv_louvain": 0.0,
+    "robustness_cv_leiden": 0.0,
+    "robustness_cv_infomap": 0.0,
+    "robustness_mean_auc_louvain": 1.0,
+    "robustness_mean_auc_leiden": 1.0,
+    "robustness_mean_auc_infomap": 1.0,
+    "robustness_dunn_p_louvain_leiden": 1.0,
+    "robustness_dunn_p_louvain_infomap": 1.0,
+    "robustness_dunn_p_leiden_infomap": 1.0,
+    "fp_count_top20": 12.0,
+    "tp_count_top20": 8.0,
+    "fp_mean_community_size": 20.916666666666668,
+    "tp_mean_community_size": 23.75,
+    "n_communities": 23.0,
+    "n_cartel_communities": 8.0,
+    "n_legitimate_communities": 15.0
+  },
+  "datasets": [
+    {
+      "dataset": "openalex_journal_citations_2018_2022_with_synthetic_cartels",
+      "examples": [
+        {
+          "input": "Community 2: 38 journals. Journals: Journal J0002, Journal J0013, Journal J0027, Journal J0052, Journal J0063, Journal J0077, Journal J0088, Journal J0102.... Is this a citation cartel?",
+          "output": "cartel",
+          "predict_cvs": "0.944123",
+          "predict_reciprocity": "0.087748",
+          "predict_cidre_lite": "0.974760",
+          "metadata_community_id": 2,
+          "metadata_community_size": 38,
+          "metadata_label": 1,
+          "metadata_journal_ids": [
+            "J0477",
+            "J0277",
+            "J0302",
+            "J0238",
+            "J0138",
+            "J0002",
+            "J0288",
+            "J0063",
+            "J0488",
+            "J0088"
+          ],
+          "metadata_journal_names": [
+            "Journal J0002",
+            "Journal J0013",
+            "Journal J0027",
+            "Journal J0052",
+            "Journal J0063",
+            "Journal J0077",
+            "Journal J0088",
+            "Journal J0102",
+            "Journal J0113",
+            "Journal J0127"
+          ],
+          "eval_cvs_rank": 8.0,
+          "eval_cvs_rank_fraction": 0.34782608695652173,
+          "eval_cvs_score": 0.944123,
+          "eval_reciprocity_score": 0.087748,
+          "eval_cidre_lite_score": 0.97476,
+          "eval_correct_cvs": 1.0,
+          "eval_is_fp": 0.0,
+          "eval_is_tp": 1.0
+        },
+        {
+          "input": "Community 4: 23 journals. Journals: Journal J0004, Journal J0029, Journal J0054, Journal J0064, Journal J0079, Journal J0104, Journal J0129, Journal J0154.... Is this a citation cartel?",
+          "output": "cartel",
+          "predict_cvs": "0.962941",
+          "predict_reciprocity": "0.174507",
+          "predict_cidre_lite": "0.974474",
+          "metadata_community_id": 4,
+          "metadata_community_size": 23,
+          "metadata_label": 1,
+          "metadata_journal_ids": [
+            "J0154",
+            "J0054",
+            "J0179",
+            "J0254",
+            "J0479",
+            "J0354",
+            "J0304",
+            "J0452",
+            "J0379",
+            "J0029"
+          ],
+          "metadata_journal_names": [
+            "Journal J0004",
+            "Journal J0029",
+            "Journal J0054",
+            "Journal J0064",
+            "Journal J0079",
+            "Journal J0104",
+            "Journal J0129",
+            "Journal J0154",
+            "Journal J0179",
+            "Journal J0204"
+          ],
+          "eval_cvs_rank": 4.0,
+          "eval_cvs_rank_fraction": 0.17391304347826086,
+          "eval_cvs_score": 0.962941,
+          "eval_reciprocity_score": 0.174507,
+          "eval_cidre_lite_score": 0.974474,
+          "eval_correct_cvs": 1.0,
+          "eval_is_fp": 0.0,
+          "eval_is_tp": 1.0
+        },
+        {
+          "input": "Community 1: 18 journals. Journals: Journal J0001, Journal J0026, Journal J0051, Journal J0076, Journal J0101, Journal J0126, Journal J0151, Journal J0176.... Is this a citation cartel?",
+          "output": "legitimate",
+          "predict_cvs": "0.846859",
+          "predict_reciprocity": "0.136850",
+          "predict_cidre_lite": "0.988347",
+          "metadata_community_id": 1,
+          "metadata_community_size": 18,
+          "metadata_label": 0,
+          "metadata_journal_ids": [
+            "J0251",
+            "J0301",
+            "J0101",
+            "J0051",
+            "J0376",
+            "J0476",
+            "J0451",
+            "J0201",
+            "J0126",
+            "J0351"
+          ],
+          "metadata_journal_names": [
+            "Journal J0001",
+            "Journal J0026",
+            "Journal J0051",
+            "Journal J0076",
+            "Journal J0101",
+            "Journal J0126",
+            "Journal J0151",
+            "Journal J0176",
+            "Journal J0201",
+            "Journal J0226"
+          ],
+          "eval_cvs_rank": 9.0,
+          "eval_cvs_rank_fraction": 0.391304347826087,
+          "eval_cvs_score": 0.846859,
+          "eval_reciprocity_score": 0.13685,
+          "eval_cidre_lite_score": 0.988347,
+          "eval_correct_cvs": 1.0,
+          "eval_is_fp": 1.0,
+          "eval_is_tp": 0.0
+        },
+        {
+          "input": "Community 3: 19 journals. Journals: Journal J0003, Journal J0028, Journal J0053, Journal J0078, Journal J0103, Journal J0128, Journal J0153, Journal J0178.... Is this a citation cartel?",
+          "output": "legitimate",
+          "predict_cvs": "0.640899",
+          "predict_reciprocity": "0.056808",
+          "predict_cidre_lite": "0.988109",
+          "metadata_community_id": 3,
+          "metadata_community_size": 19,
+          "metadata_label": 0,
+          "metadata_journal_ids": [
+            "J0428",
+            "J0278",
+            "J0478",
+            "J0153",
+            "J0053",
+            "J0103",
+            "J0353",
+            "J0328",
+            "J0253",
+            "J0378"
+          ],
+          "metadata_journal_names": [
+            "Journal J0003",
+            "Journal J0028",
+            "Journal J0053",
+            "Journal J0078",
+            "Journal J0103",
+            "Journal J0128",
+            "Journal J0153",
+            "Journal J0178",
+            "Journal J0228",
+            "Journal J0253"
+          ],
+          "eval_cvs_rank": 20.0,
+          "eval_cvs_rank_fraction": 0.8695652173913043,
+          "eval_cvs_score": 0.640899,
+          "eval_reciprocity_score": 0.056808,
+          "eval_cidre_lite_score": 0.988109,
+          "eval_correct_cvs": 1.0,
+          "eval_is_fp": 1.0,
+          "eval_is_tp": 0.0
+        },
+        {
+          "input": "Community 5: 20 journals. Journals: Journal J0005, Journal J0030, Journal J0055, Journal J0080, Journal J0105, Journal J0130, Journal J0155, Journal J0180.... Is this a citation cartel?",
+          "output": "legitimate",
+          "predict_cvs": "0.793479",
+          "predict_reciprocity": "0.112965",
+          "predict_cidre_lite": "0.987087",
+          "metadata_community_id": 5,
+          "metadata_community_size": 20,
+          "metadata_label": 0,
+          "metadata_journal_ids": [
+            "J0330",
+            "J0380",
+            "J0155",
+            "J0480",
+            "J0230",
+            "J0405",
+            "J0255",
+            "J0130",
+            "J0080",
+            "J0305"
+          ],
+          "metadata_journal_names": [
+            "Journal J0005",
+            "Journal J0030",
+            "Journal J0055",
+            "Journal J0080",
+            "Journal J0105",
+            "Journal J0130",
+            "Journal J0155",
+            "Journal J0180",
+            "Journal J0205",
+            "Journal J0230"
+          ],
+          "eval_cvs_rank": 12.0,
+          "eval_cvs_rank_fraction": 0.5217391304347826,
+          "eval_cvs_score": 0.793479,
+          "eval_reciprocity_score": 0.112965,
+          "eval_cidre_lite_score": 0.987087,
+          "eval_correct_cvs": 1.0,
+          "eval_is_fp": 1.0,
+          "eval_is_tp": 0.0
+        },
+        {
+          "input": "Community 0: 20 journals. Journals: Journal J0000, Journal J0025, Journal J0050, Journal J0075, Journal J0100, Journal J0125, Journal J0150, Journal J0175.... Is this a citation cartel?",
+          "output": "legitimate",
+          "predict_cvs": "0.603866",
+          "predict_reciprocity": "0.043111",
+          "predict_cidre_lite": "0.991010",
+          "metadata_community_id": 0,
+          "metadata_community_size": 20,
+          "metadata_label": 0,
+          "metadata_journal_ids": [
+            "J0250",
+            "J0000",
+            "J0375",
+            "J0200",
+            "J0450",
+            "J0425",
+            "J0350",
+            "J0275",
+            "J0475",
+            "J0175"
+          ],
+          "metadata_journal_names": [
+            "Journal J0000",
+            "Journal J0025",
+            "Journal J0050",
+            "Journal J0075",
+            "Journal J0100",
+            "Journal J0125",
+            "Journal J0150",
+            "Journal J0175",
+            "Journal J0200",
+            "Journal J0225"
+          ],
+          "eval_cvs_rank": 22.0,
+          "eval_cvs_rank_fraction": 0.9565217391304348,
+          "eval_cvs_score": 0.603866,
+          "eval_reciprocity_score": 0.043111,
+          "eval_cidre_lite_score": 0.99101,
+          "eval_correct_cvs": 1.0,
+          "eval_is_fp": 0.0,
+          "eval_is_tp": 0.0
+        }
+      ]
+    }
+  ]
+}
